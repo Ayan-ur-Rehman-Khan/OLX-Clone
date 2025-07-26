@@ -227,7 +227,54 @@ body {
     padding: 20px;
 }
 
+.log-btn {
+    height: 40px;
+    width: 60px;
+    background-color: white;
+    border: none;
+    font-size: 20px;
+    border-bottom: 1px solid black;
+    font-family: sans-serif;
+    font-weight: 400;
 
+}
+
+.log-btn:hover {
+    border: none;
+}
+
+.lo-btn {
+    height: 40px;
+    width: 60px;
+    background-color: white;
+    border: none;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 300;
+}
+
+.avatar {
+    border: none;
+    background-color: white;
+    display: flex;
+    justify-content: right;
+    align-items:flex-end;
+}
+
+#profile-name{
+    margin-top: 0px;
+    font-family: sans-serif;
+    margin-bottom: 0px;
+}
+
+#profile-email{
+    margin-top: 0px;
+}
+
+
+.slider .img{
+    margin-left: 50px;
+}
 
 /* ---------------- Responsive ---------------- */
 @media (max-width: 768px) {

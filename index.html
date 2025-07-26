@@ -6,47 +6,161 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OLX Clone</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAVFBMVEVHcEywxv/8/f/1+P/2+f/09//6/P/+///6/P/1+P+Gp/9biv+zxv/1+f/F1P8xc/9qlP8WaP+ju//1+P/i6v/u8//x9f/t8v/w9P/7+////v/v9P+Ql9PWAAAAHHRSTlMAAkuAnCe6///e////////////S////5lLAgK6IttEUQAAAPZJREFUeAGtkleCgzAMRENskLK26Ih2/3uujOjlKxk6D8Zqr18oehtrzTu6QXECs5L4zCyIULZwtkf2wb3g88yO1B4J4s453gEAVC1RJfo2hPLnPCDJhomyCJEgdZlLAfKiBFBnzbcigrLIskxAnpW1p9o3RNUEDVEtzAnlPPNl4bIiRTIaK6HPMg9ySsOf4uGYyCrkC8wFtmrLq22z2hKrbceMh4C49jVzN8GehXpJxSNKKkhMJK8GTXRkZkIKb6UIAYjGpXzcyMbhCF8007Y21XITUOBKmsbuWtacdGzoMxPZPbOXARsXNMavq4bOtK3pJL/v9Q8rVRhiFrv32wAAAABJRU5ErkJggg==" type="image/x-icon">
+    <link rel="icon"
+        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAVFBMVEVHcEywxv/8/f/1+P/2+f/09//6/P/+///6/P/1+P+Gp/9biv+zxv/1+f/F1P8xc/9qlP8WaP+ju//1+P/i6v/u8//x9f/t8v/w9P/7+////v/v9P+Ql9PWAAAAHHRSTlMAAkuAnCe6///e////////////S////5lLAgK6IttEUQAAAPZJREFUeAGtkleCgzAMRENskLK26Ih2/3uujOjlKxk6D8Zqr18oehtrzTu6QXECs5L4zCyIULZwtkf2wb3g88yO1B4J4s453gEAVC1RJfo2hPLnPCDJhomyCJEgdZlLAfKiBFBnzbcigrLIskxAnpW1p9o3RNUEDVEtzAnlPPNl4bIiRTIaK6HPMg9ySsOf4uGYyCrkC8wFtmrLq22z2hKrbceMh4C49jVzN8GehXpJxSNKKkhMJK8GTXRkZkIKb6UIAYjGpXzcyMbhCF8007Y21XITUOBKmsbuWtacdGzoMxPZPbOXARsXNMavq4bOtK3pJL/v9Q8rVRhiFrv32wAAAABJRU5ErkJggg=="
+        type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
 
 </head>
 
 <body>
-    <header class="header">
-        <div class="logo">
-            <svg height="40" viewBox="0 0 36.289 20.768" alt="Logo" class="_8113da19"><path d="M18.9 20.77V0h4.93v20.77zM0 10.39a8.56 8.56 0 1 1 8.56 8.56A8.56 8.56 0 0 1 0 10.4zm5.97-.01a2.6 2.6 0 1 0 2.6-2.6 2.6 2.6 0 0 0-2.6 2.6zm27 5.2l-1.88-1.87-1.87 1.88H25.9V12.3l1.9-1.9-1.9-1.89V5.18h3.27l1.92 1.92 1.93-1.92h3.27v3.33l-1.9 1.9 1.9 1.9v3.27z"></path></svg>
+    <div class="container mt-5" style="display: none;" id="model">
+        <!-- <p>Username : <span id="username"></span></p>
+        <p>Email : <span id="useremail"></span></p> -->
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <!-- Tabs -->
+                <ul class="nav nav-tabs mb-3" id="authTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login"
+                            type="button" role="tab">Login</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="register-tab" data-bs-toggle="tab" data-bs-target="#register"
+                            type="button" role="tab">Register</button>
+                    </li>
+                </ul>
+
+                <div class="tab-content" id="authTabsContent">
+                    <!-- Login Form -->
+                    <div class="tab-pane fade show active" id="login" role="tabpanel">
+                        <div class="card p-4">
+                            <h4 class="mb-3">Login</h4>
+                            <form onsubmit="loginUser(event)">
+                                <div class="mb-3">
+                                    <label for="loginEmail" class="form-label">Email address</label>
+                                    <input type="email" class="form-control" id="loginEmail" placeholder="Enter email">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="loginPassword" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="loginPassword"
+                                        placeholder="Password">
+                                </div>
+                                <div class="autharea">
+                                    <button type="submit" class="btn btn-primary w-100" id="log2">Login</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Register Form -->
+                    <div class="tab-pane fade" id="register" role="tabpanel">
+                        <div class="card p-4">
+                            <h4 class="mb-3">Register</h4>
+                            <form onsubmit="registerUser(event)">
+                                <div class="mb-3">
+                                    <label for="registerName" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="fullName" placeholder="Enter full name"
+                                        required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="registerEmail" class="form-label">Email address</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Enter email"
+                                        required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="registerPassword" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="password" placeholder="Password"
+                                        required>
+                                </div>
+                                <!-- <div class="mb-3">
+                                    <label for="registerConfirm" class="form-label">Confirm Password</label>
+                                    <input type="password" class="form-control" id="registerConfirm"
+                                        placeholder="Confirm Password" required>
+                                </div> -->
+                                <button type="submit" class="btn btn-success w-100">Register</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <button class="btn btn-success w-100" onclick="logoutUser()">Log out</button> -->
+            </div>
         </div>
-        <div class="search-bar">
-            <input type="text" placeholder="Search for products...">
-            <button>Search</button>
-        </div>
-    </header>
-
-    <nav class="categories-nav">
-        <ul>
-            <li><a href="#">Cars</a></li>
-            <li><a href="#">Motorcycles</a></li>
-            <li><a href="#">Mobile Phones</a></li>
-            <li><a href="#">Houses</a></li>
-            <li><a href="#">TV - Video - Audio</a></li>
-            <li><a href="#">Tablets</a></li>
-            <li><a href="#">Land & Plots</a></li>
-            <li><a href="#">Bikes</a></li>
-            <li><a href="#">Books </a></li>
-            <li><a href="#"> Sports & Hobbies</a></li>
-            <li><a href="#">Fashion & Beauty</a></li>
-            <li><a href="#">Kids</a></li>
-        </ul>
-    </nav>
-
-    <main class="main-content">
-        <h1>Welcome to OLX!</h1>
-        <p>Explore a wide range of products and services.</p>
-        <!-- Product listings will go here -->
-    </main>
-
-    <div id="cards"></div>
     </div>
+
+
+    <div class="main-container" id="main">
+
+        <header class="header">
+            <div class="logo">
+                <svg height="40" viewBox="0 0 36.289 20.768" alt="Logo" class="_8113da19">
+                    <path
+                        d="M18.9 20.77V0h4.93v20.77zM0 10.39a8.56 8.56 0 1 1 8.56 8.56A8.56 8.56 0 0 1 0 10.4zm5.97-.01a2.6 2.6 0 1 0 2.6-2.6 2.6 2.6 0 0 0-2.6 2.6zm27 5.2l-1.88-1.87-1.87 1.88H25.9V12.3l1.9-1.9-1.9-1.89V5.18h3.27l1.92 1.92 1.93-1.92h3.27v3.33l-1.9 1.9 1.9 1.9v3.27z">
+                    </path>
+                </svg>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for products...">
+                <button>Search</button>
+            </div>
+            <div class="login">
+                <button class="log-btn" id="log">
+                    LogIn
+                </button>
+            </div>
+            <div class="avatar" id="avatar" style="display: none;">
+                <div class="image">
+
+                    <img src="./iconProfilePicture_noinline.6327fd8895807f09fafb0ad1e3d99b83.svg" alt="" height="40px"
+                        width="40px" style="border-radius: 100px;" id="profile">
+                </div>
+
+                <p id="profile-name" class="nAme"></p>
+                <p id="profile-email" class="eMail"></p>
+                <button id="logoutBtn" class="lo-btn" onclick="logoutUser()">Logout</button>
+            </div>
+        </header>
+
+        <!-- <div id="profile-popup">
+            <p id="profile-name"></p>
+            <p id="profile-email"></p>
+            <button id="logoutBtn">Logout</button>
+        </div> -->
+
+        <nav class="categories-nav">
+            <ul>
+                <li><a href="#">Cars</a></li>
+                <li><a href="#">Motorcycles</a></li>
+                <li><a href="#">Mobile Phones</a></li>
+                <li><a href="#">Houses</a></li>
+                <li><a href="#">TV - Video - Audio</a></li>
+                <li><a href="#">Tablets</a></li>
+                <li><a href="#">Land & Plots</a></li>
+                <li><a href="#">Bikes</a></li>
+                <li><a href="#">Books </a></li>
+                <li><a href="#"> Sports & Hobbies</a></li>
+                <li><a href="#">Fashion & Beauty</a></li>
+                <li><a href="#">Kids</a></li>
+            </ul>
+        </nav>
+
+        <main class="slider">
+            <img src="./527654309-800x600.webp" alt="" class="img">
+            
+
+        </main>
+
+        <div id="cards"></div>
+    </div>
+    </div>
+
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="index.js"></script>
 </body>
 
